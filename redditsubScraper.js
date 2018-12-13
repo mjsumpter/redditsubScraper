@@ -3,11 +3,20 @@ const fs = require('fs');
 
 const subreddit = process.argv[2];
 const url = `https://www.reddit.com/r/${subreddit}/top.json`
-const numResults = 10;
+let numResults;
 
 const writeStream = fs.createWriteStream(`${subreddit}.csv`);
 // Write Headers
 writeStream.write(`Score,Title,Author,Number of Comments,URL \n`);
+
+if (process.argv.length > 3)
+{
+    numResults = process.argv[3];
+}
+else
+{
+    numResults = 10;
+}
 
 try
 {

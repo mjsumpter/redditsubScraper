@@ -8,6 +8,11 @@ Run the redditsubScraper with node, and with your subreddit name as follows:
 ```
 node redditsubScraper.js news
 ```
+Default search terms will be 10, unless specified in command line as follows:
+```
+node redditssubScraper.js news 15
+```
+will return 15 results
 
 ## Authors
 
